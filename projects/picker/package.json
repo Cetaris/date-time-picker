@@ -1,7 +1,7 @@
 {
-    "name": "@kwu-work/ng-pick-datetime",
+    "name": "@cetaris/ng-pick-datetime",
     "version": "8.0.13",
-    "description": "Angular Date Time Picker",
+    "description": "Cetaris Angular Date Time Picker",
     "keywords": [
         "Angular",
         "datepicker",
@@ -13,7 +13,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/kwu-work/date-time-picker.git"
+        "url": "https://github.com/Cetaris/date-time-picker.git"
     },
     "peerDependencies": {
         "@angular/common": "^7.0.0",
