@@ -337,6 +337,11 @@ export class OwlMonthViewComponent<T>
         }
 
         this.selectedDay = cell.value;
+
+        // Use this for when selecting dates on the date-time picker
+        if (!this.showMonth) {
+            this.selectDate(this.selectedDay);
+        }
     }
 
     /**
@@ -351,7 +356,7 @@ export class OwlMonthViewComponent<T>
                 this.firstDateOfMonth,
                 daysDiff
             );
-    
+
             this.selectedChange.emit(selected);
             this.userSelection.emit();
         }
@@ -361,6 +366,7 @@ export class OwlMonthViewComponent<T>
                 this.firstDateOfMonth,
                 new Date().getDate() - 1
             );
+
             this.selectedChange.emit(selected);
         }
     }
