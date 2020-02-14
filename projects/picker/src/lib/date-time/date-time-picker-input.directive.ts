@@ -467,6 +467,8 @@ export class OwlDateTimeInputDirective<T>
                     value: selecteds,
                     input: this.elmRef.nativeElement
                 });
+
+                this.elmRef.nativeElement.value = this.elmRef.nativeElement.value.toLowerCase();
             }
         );
     }

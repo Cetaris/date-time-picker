@@ -97,21 +97,51 @@ export class OwlTimerBoxComponent implements OnInit, OnDestroy {
         this.updateValue(this.value - this.step);
     }
 
+    // Christopher: Added value to remove non-numeric characters
+    private stripNonNumbers(value: string) {
+        let newString = "";
+        const validKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+        if (value) {
+            for (let i = 0; i < value.length; i++) {
+                if (validKeys.indexOf(value[i]) !== -1) {
+                    newString += value[i];
+                }
+            }
+        }
+
+        return newString;
+    }
+
     public handleInputChange( val: string ): void {
+        const hourEl: any = document.querySelector(".hour");
+        const minuteEl: any = document.querySelector(".minute");
+        let numValue: string;
+
         if (val.length <= this.maxlength) {
-            this.inputStream.next(val);
+            numValue = this.stripNonNumbers(val)
+            
+            if (this.inputLabel === 'Minute') {
+                minuteEl.value = parseInt(numValue);
+            }
+            else {
+                hourEl.value = parseInt(numValue);
+            }
+
+            this.inputStream.next(numValue);
         }
         else {
-            const newValue = val.substr(val.length - this.maxlength);
+            const strippedValue = this.stripNonNumbers(val);
+            const newValue = strippedValue.substr(strippedValue.length - this.maxlength)
 
             if (this.inputLabel === 'Minute') {
                 // Force the UI to display only 2 values
-                const minuteEl: any = document.querySelector(".minute");
                 this.value = parseInt(newValue);
                 minuteEl.value = newValue;
             }
             else {
                 this.boxValue = parseInt(newValue);
+                hourEl.value = newValue;
             }
 
             this.inputStream.next(newValue);
