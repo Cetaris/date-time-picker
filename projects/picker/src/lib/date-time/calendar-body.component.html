@@ -4,6 +4,7 @@
         class="owl-dt-calendar-cell {{ item.cellClass }}"
         [tabindex]="isActiveCell(rowIndex, colIndex) ? 0 : -1"
         [class.owl-dt-calendar-cell-disabled]="!item.enabled || item.out"
+        [class.owl-dt-calendar-cell-out]="item.out"
         [class.owl-dt-calendar-cell-in-range]="isInRange(item.value)"
         [class.owl-dt-calendar-cell-range-from]="isRangeFrom(item.value)"
         [class.owl-dt-calendar-cell-range-to]="isRangeTo(item.value)"

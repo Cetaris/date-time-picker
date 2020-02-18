@@ -284,6 +284,13 @@ $theme-color: #3f51b5;
         border-radius: 999px;
         color: inherit;
         cursor: pointer;
+
+        /// Kai >>>
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /// Kai <<<
     }
 
     .owl-dt-calendar-cell-today:not(.owl-dt-calendar-cell-selected) {
@@ -376,7 +383,10 @@ $theme-color: #3f51b5;
         width: 3em;
         height: 100px;
         text-align: center;
-        border: 2px solid #dddddd;
+        /// Kai >>>
+        // border: 2px solid #dddddd;
+        border: 1px solid #b8b8b8; // $gray-40
+        /// Kai <<<
         border-radius: 3px;
         outline: medium none;
         font-size: 1.2em;
@@ -642,7 +652,13 @@ $theme-color: #3f51b5;
 
 .owl-dt-calendar-only-current-month {
     .owl-dt-calendar-cell-out {
-        visibility: hidden;
+        /// Kai >>>
+        // visibility: hidden;
+        & > .owl-dt-calendar-cell-content {
+            visibility: hidden;
+        }
+        background-color: #f5f5f5; // $gray-10
+        /// Kai <<<
         cursor: default;
     }
 }
@@ -742,6 +758,12 @@ $theme-color: #3f51b5;
         .owl-dt-calendar-cell-today {
             background-color: #dfebf5;
             border: none;
+            /// Kai >>>
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            margin: 6px;
+            /// Kai <<<
         }
 
         .owl-dt-calendar-cell-selected {
