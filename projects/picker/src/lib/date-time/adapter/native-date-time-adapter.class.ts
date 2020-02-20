@@ -408,10 +408,17 @@ export class NativeDateTimeAdapter extends DateTimeAdapter<Date> {
 
             displayFormat = { ...displayFormat, timeZone: 'utc' };
             const dtf = new Intl.DateTimeFormat(this.locale, displayFormat);
-            return this.stripDirectionalityCharacters(this._format(dtf, date));
+            return this.stripDirectionalityCharacters(this._format(dtf, date))
+                .replace('AM', 'am')
+                .replace('PM', 'pm');
         }
 
-        return this.stripDirectionalityCharacters(date.toDateString());
+        return this.stripDirectionalityCharacters(
+            date
+                .toDateString()
+                .replace('AM', 'am')
+                .replace('PM', 'pm')
+        );
     }
 
     public parse(value: any, parseFormat: any): Date | null {
