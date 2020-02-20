@@ -350,6 +350,13 @@ export class OwlMonthViewComponent<T>
     selectDate(date: number): void {
         let selected;
 
+        // Kai
+        // This is to fix the issue that in calendar only mode, clicking Set button without changing date,
+        // previously selected date will be replaced with Today.
+        if (undefined === date && this.selectedDates[0]) {
+            date = this.selectedDates[0];
+        }
+
         if (date) {
             const daysDiff = date - 1;
             selected = this.dateTimeAdapter.addCalendarDays(
