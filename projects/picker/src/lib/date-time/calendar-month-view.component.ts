@@ -242,7 +242,7 @@ export class OwlMonthViewComponent<T>
     }
 
     /**
-     * Boolean flag for hiding 'Set Date' / 'Cancel' duo 
+     * Boolean flag for hiding 'Set Date' / 'Cancel' duo
      **/
     @Input()
     showMonth: boolean;
@@ -359,8 +359,7 @@ export class OwlMonthViewComponent<T>
 
             this.selectedChange.emit(selected);
             this.userSelection.emit();
-        }
-        else {
+        } else {
             // Set to today's date
             selected = this.dateTimeAdapter.addCalendarDays(
                 this.firstDateOfMonth,
@@ -490,7 +489,11 @@ export class OwlMonthViewComponent<T>
         const firstDayOfWeek = this.firstDayOfWeek;
 
         const weekdays = longWeekdays.map((long, i) => {
-            return { long, short: shortWeekdays[i].replace(".", ""), narrow: narrowWeekdays[i] };
+            return {
+                long,
+                short: shortWeekdays[i].replace('.', ''),
+                narrow: narrowWeekdays[i]
+            };
         });
 
         this._weekdays = weekdays
@@ -572,22 +575,22 @@ export class OwlMonthViewComponent<T>
      * Remove the week if it contains days from another month.
      */
     private containsDaysFromAnotherMonth(week: CalendarCell[]) {
-        let overlap: boolean = false; 
+        let overlap: boolean = false;
         const firstDayOfWeek = week[0].value;
         const month = new Date(week[0].ariaLabel).getMonth();
-        const currentMonth = new Date(this.firstDateOfMonth.toString()).getMonth();
-        
+        const currentMonth = new Date(
+            this.firstDateOfMonth.toString()
+        ).getMonth();
+
         // Don't hide this date if there's still a few days left
         if (firstDayOfWeek >= 30 || firstDayOfWeek < 0) {
             // Check if it's still within the month's crevices
             if (month === currentMonth) {
                 overlap = false;
-            }
-            else {
+            } else {
                 overlap = true;
             }
-        }
-        else {
+        } else {
             for (let i = 1; i < week.length; i++) {
                 const day = new Date(week[i].ariaLabel);
 
