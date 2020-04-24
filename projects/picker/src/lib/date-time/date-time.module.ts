@@ -22,6 +22,14 @@ import { OwlCalendarComponent } from './calendar.component';
 import { OwlDateTimeInlineComponent } from './date-time-inline.component';
 import { OwlDialogModule } from '../dialog/dialog.module';
 
+export { OwlCalendarComponent } from './calendar.component';
+export { OwlTimerComponent } from './timer.component';
+export { OwlDateTimeTriggerDirective } from './date-time-picker-trigger.directive';
+export { OwlDateTimeInputDirective } from './date-time-picker-input.directive';
+export { OwlMultiYearViewComponent } from './calendar-multi-year-view.component';
+export { OwlYearViewComponent } from './calendar-year-view.component';
+export { OwlMonthViewComponent } from './calendar-month-view.component';
+
 @NgModule({
   imports: [CommonModule, OverlayModule, OwlDialogModule, A11yModule],
   exports: [
