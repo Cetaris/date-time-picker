@@ -1,23 +1,32 @@
 <owl-date-time-timer-box
-        [upBtnAriaLabel]="upHourButtonLabel"
-        [downBtnAriaLabel]="downHourButtonLabel"
-        [upBtnDisabled]="!upHourEnabled()"
-        [downBtnDisabled]="!downHourEnabled()"
-        [boxValue]="hourBoxValue"
-        [value]="hourValue" [min]="1" [max]="12"
-        [step]="stepHour" [inputLabel]="'Hour'"
-        (inputChange)="setHourValueViaInput($event)"
-        (valueChange)="setHourValue($event)"></owl-date-time-timer-box>
+  [upBtnAriaLabel]="upHourButtonLabel"
+  [downBtnAriaLabel]="downHourButtonLabel"
+  [upBtnDisabled]="!upHourEnabled()"
+  [downBtnDisabled]="!downHourEnabled()"
+  [boxValue]="hourBoxValue"
+  [value]="hourValue"
+  [min]="1"
+  [max]="12"
+  [step]="stepHour"
+  [inputLabel]="'Hour'"
+  (inputChange)="setHourValueViaInput($event)"
+  (valueChange)="setHourValue($event)"
+></owl-date-time-timer-box>
 <owl-date-time-timer-box
-        [showDivider]="true"
-        [upBtnAriaLabel]="upMinuteButtonLabel"
-        [downBtnAriaLabel]="downMinuteButtonLabel"
-        [upBtnDisabled]="!upMinuteEnabled()"
-        [downBtnDisabled]="!downMinuteEnabled()"
-        [value]="minuteValue" [min]="0" [max]="59" [maxlength]="2"
-        [step]="stepMinute" [inputLabel]="'Minute'"
-        (inputChange)="setMinuteValue($event)"
-        (valueChange)="setMinuteValue($event)"></owl-date-time-timer-box>
+  [showDivider]="true"
+  [upBtnAriaLabel]="upMinuteButtonLabel"
+  [downBtnAriaLabel]="downMinuteButtonLabel"
+  [upBtnDisabled]="!upMinuteEnabled()"
+  [downBtnDisabled]="!downMinuteEnabled()"
+  [value]="minuteValue"
+  [min]="0"
+  [max]="59"
+  [maxlength]="2"
+  [step]="stepMinute"
+  [inputLabel]="'Minute'"
+  (inputChange)="setMinuteValue($event)"
+  (valueChange)="setMinuteValue($event)"
+></owl-date-time-timer-box>
 <!-- <owl-date-time-timer-box
         *ngIf="showSecondsTimer"
         [showDivider]="true"
@@ -31,6 +40,8 @@
         (valueChange)="setSecondValue($event)"></owl-date-time-timer-box> -->
 
 <div *ngIf="hour12Timer" class="owl-dt-timer-hour12">
-        <div class="owl-dt-timer-ampm-trigger" [ngStyle]="{ 'color': !isPM ? 'black' : 'gray' }" (click)="isPM = false; setMeridiem($event)">am</div>
-        <div class="owl-dt-timer-ampm-trigger" [ngStyle]="{ 'color': isPM ? 'black' : 'gray' }" (click)="isPM = true; setMeridiem($event)">pm</div>
+  <div class="owl-dt-timer-ampm-trigger" [ngStyle]="{ color: !isPM ? 'black' : 'gray' }" (click)="isPM = false; setMeridiem($event)">
+    am
+  </div>
+  <div class="owl-dt-timer-ampm-trigger" [ngStyle]="{ color: isPM ? 'black' : 'gray' }" (click)="isPM = true; setMeridiem($event)">pm</div>
 </div>
