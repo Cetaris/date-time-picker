@@ -165,7 +165,7 @@ export class OwlDateTimeInlineComponent<T> extends OwlDateTime<T> implements OnI
 
   set values(values: T[]) {
     if (values && values.length > 0) {
-      values = values.map(v => {
+      values = values.map((v) => {
         v = this.dateTimeAdapter.deserialize(v);
         v = this.getValidDate(v);
         return v ? this.dateTimeAdapter.clone(v) : null;

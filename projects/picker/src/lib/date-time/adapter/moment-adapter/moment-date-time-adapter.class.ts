@@ -74,7 +74,7 @@ export class MomentDateTimeAdapter extends DateTimeAdapter<Moment> {
       longDaysOfWeek: momentLocaleData.weekdays(),
       shortDaysOfWeek: momentLocaleData.weekdaysShort(),
       narrowDaysOfWeek: momentLocaleData.weekdaysMin(),
-      dates: range(31, i => this.createDate(2017, 0, i + 1).format('D')),
+      dates: range(31, (i) => this.createDate(2017, 0, i + 1).format('D')),
     };
   }
 

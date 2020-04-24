@@ -21,7 +21,7 @@ const DEFAULT_DAY_OF_WEEK_NAMES = {
 };
 
 /** The default date names to use if Intl API is not available. */
-const DEFAULT_DATE_NAMES = range(31, i => String(i + 1));
+const DEFAULT_DATE_NAMES = range(31, (i) => String(i + 1));
 
 /** Whether the browser supports the Intl API. */
 const SUPPORTS_INTL_API = typeof Intl !== 'undefined';
@@ -137,7 +137,7 @@ export class NativeDateTimeAdapter extends DateTimeAdapter<Date> {
         month: style,
         timeZone: 'utc',
       });
-      return range(12, i => this.stripDirectionalityCharacters(this._format(dtf, new Date(2017, i, 1))));
+      return range(12, (i) => this.stripDirectionalityCharacters(this._format(dtf, new Date(2017, i, 1))));
     }
     return DEFAULT_MONTH_NAMES[style];
   }
@@ -148,7 +148,7 @@ export class NativeDateTimeAdapter extends DateTimeAdapter<Date> {
         weekday: style,
         timeZone: 'utc',
       });
-      return range(7, i => this.stripDirectionalityCharacters(this._format(dtf, new Date(2017, 0, i + 1))));
+      return range(7, (i) => this.stripDirectionalityCharacters(this._format(dtf, new Date(2017, 0, i + 1))));
     }
 
     return DEFAULT_DAY_OF_WEEK_NAMES[style];
@@ -160,7 +160,7 @@ export class NativeDateTimeAdapter extends DateTimeAdapter<Date> {
         day: 'numeric',
         timeZone: 'utc',
       });
-      return range(31, i => this.stripDirectionalityCharacters(this._format(dtf, new Date(2017, 0, i + 1))));
+      return range(31, (i) => this.stripDirectionalityCharacters(this._format(dtf, new Date(2017, 0, i + 1))));
     }
     return DEFAULT_DATE_NAMES;
   }

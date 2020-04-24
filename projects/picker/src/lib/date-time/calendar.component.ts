@@ -122,7 +122,7 @@ export class OwlCalendarComponent<T> implements OnInit, AfterContentInit, AfterV
   }
 
   set selecteds(values: T[]) {
-    this._selecteds = values.map(v => {
+    this._selecteds = values.map((v) => {
       v = this.dateTimeAdapter.deserialize(v);
       return this.getValidDate(v);
     });

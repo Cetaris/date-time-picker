@@ -61,7 +61,7 @@ export class OwlDialogRef<T> {
 
     this.overlayRef
       .keydownEvents()
-      .pipe(filter(event => event.keyCode === ESCAPE && !this.disableClose))
+      .pipe(filter((event) => event.keyCode === ESCAPE && !this.disableClose))
       .subscribe(() => this.close());
 
     if (location) {

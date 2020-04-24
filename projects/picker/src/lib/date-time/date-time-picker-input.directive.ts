@@ -187,7 +187,7 @@ export class OwlDateTimeInputDirective<T> implements OnInit, AfterContentInit, O
 
   set values(values: T[]) {
     if (values && values.length > 0) {
-      this._values = values.map(v => {
+      this._values = values.map((v) => {
         v = this.dateTimeAdapter.deserialize(v);
         return this.getValidDate(v);
       });

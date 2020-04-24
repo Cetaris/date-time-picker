@@ -127,7 +127,7 @@ export class OwlDialogService {
    * @param id ID to use when looking up the dialog.
    */
   public getDialogById(id: string): OwlDialogRef<any> | undefined {
-    return this.openDialogs.find(dialog => dialog.id === id);
+    return this.openDialogs.find((dialog) => dialog.id === id);
   }
 
   private attachDialogContent<T>(

@@ -547,7 +547,7 @@ export class OwlDateTimeComponent<T> extends OwlDateTime<T> implements OnInit, O
       this.popupRef.detachments(),
       this.popupRef
         .keydownEvents()
-        .pipe(filter(event => event.keyCode === ESCAPE || (this._dtInput && event.altKey && event.keyCode === UP_ARROW)))
+        .pipe(filter((event) => event.keyCode === ESCAPE || (this._dtInput && event.altKey && event.keyCode === UP_ARROW)))
     ).subscribe(() => this.close());
   }
 

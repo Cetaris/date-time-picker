@@ -92,7 +92,7 @@ class StandardCalendarBodyComponent {
   rows = [
     [1, 2, 3, 4, 5, 6, 7],
     [8, 9, 10, 11, 12, 13, 14],
-  ].map(r => r.map(createCell));
+  ].map((r) => r.map(createCell));
   todayValue = 3;
   selectedValues = [4];
   activeCell = 10;

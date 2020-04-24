@@ -76,7 +76,7 @@ export class OwlMultiYearViewComponent<T> implements OnInit, AfterContentInit {
   }
 
   set selecteds(values: T[]) {
-    this._selecteds = values.map(v => {
+    this._selecteds = values.map((v) => {
       v = this.dateTimeAdapter.deserialize(v);
       return this.getValidDate(v);
     });
@@ -400,7 +400,7 @@ export class OwlMultiYearViewComponent<T> implements OnInit, AfterContentInit {
     }
 
     if (this.isInRangeMode && this.selecteds) {
-      this._selectedYears = this.selecteds.map(selected => {
+      this._selectedYears = this.selecteds.map((selected) => {
         if (this.dateTimeAdapter.isValid(selected)) {
           return this.dateTimeAdapter.getYear(selected);
         } else {

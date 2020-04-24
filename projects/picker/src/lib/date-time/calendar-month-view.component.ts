@@ -109,7 +109,7 @@ export class OwlMonthViewComponent<T> implements OnInit, AfterContentInit, OnDes
   }
 
   set selecteds(values: T[]) {
-    this._selecteds = values.map(v => {
+    this._selecteds = values.map((v) => {
       v = this.dateTimeAdapter.deserialize(v);
       return this.getValidDate(v);
     });
@@ -603,7 +603,7 @@ export class OwlMonthViewComponent<T> implements OnInit, AfterContentInit, OnDes
     }
 
     if (this.isInRangeMode && this.selecteds) {
-      this.selectedDates = this.selecteds.map(selected => {
+      this.selectedDates = this.selecteds.map((selected) => {
         if (this.dateTimeAdapter.isValid(selected)) {
           const dayDiff = this.dateTimeAdapter.differenceInCalendarDays(selected, this.firstDateOfMonth);
           return dayDiff + 1;
