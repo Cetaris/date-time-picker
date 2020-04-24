@@ -175,7 +175,7 @@ export class OwlCalendarComponent<T> implements OnInit, AfterContentInit, AfterV
 
   get periodButtonText(): string {
     return this.isMonthView
-      ? this.dateTimeAdapter.format(this.pickerMoment, { year: 'numeric', month: 'long' })
+      ? this.dateTimeAdapter.format(this.pickerMoment, this.dateTimeFormats.monthYearLabel)
       : this.dateTimeAdapter.getYearName(this.pickerMoment);
   }
 
