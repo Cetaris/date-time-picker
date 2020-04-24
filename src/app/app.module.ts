@@ -19,16 +19,9 @@ export const MY_MOMENT_FORMATS = {
 };
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule, BrowserAnimationsModule, FormsModule,
-    OwlDateTimeModule, OwlMomentDateTimeModule
-  ],
-  providers: [
-    {provide: OWL_DATE_TIME_FORMATS, useValue: MY_MOMENT_FORMATS}
-  ],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  imports: [BrowserModule, BrowserAnimationsModule, FormsModule, OwlDateTimeModule, OwlMomentDateTimeModule],
+  providers: [{ provide: OWL_DATE_TIME_FORMATS, useValue: MY_MOMENT_FORMATS }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
