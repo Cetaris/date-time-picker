@@ -3,6 +3,9 @@
 <div class="owl-dt-timer-content-container">
   <label class="owl-dt-timer-content">
     <input
+      type="number"
+      [min]="min"
+      [max]="max"
       *ngIf="inputLabel === 'Hour'"
       class="owl-dt-timer-input hour"
       [value]="displayValue"
@@ -11,6 +14,9 @@
       #valueInput
     />
     <input
+      type="number"
+      [min]="min"
+      [max]="max"
       *ngIf="inputLabel === 'Minute'"
       class="owl-dt-timer-input minute"
       [value]="displayValue | numberFixedLen: 2"

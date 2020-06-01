@@ -5,7 +5,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { coerceNumberProperty } from '@angular/cdk/coercion';
 import { Subject, Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   exportAs: 'owlDateTimeTimerBox',
@@ -109,6 +108,7 @@ export class OwlTimerBoxComponent implements OnInit, OnDestroy {
 
     if (val.length <= this.maxlength) {
       numValue = this.stripNonNumbers(val);
+      numValue = numValue || '0';
 
       if (this.inputLabel === 'Minute') {
         minuteEl.value = parseInt(numValue);
